@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    file_name = argv[1];
     if(pipe(pfd) < 0)
     {
         LOG(MODULE_NAME, PROC_NAME, "[error] pipe error");
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
         close(pfd[1]);
         wait(NULL);
         read(pfd[0], file_id, FILE_NAME_LEN);
-        printf("exec fdfs_upload_file succ: file_name = %s\n", file_id);
+        printf("exec fdfs_upload_file succ: file_name = %s", file_id);
     }
 
     return 0;
