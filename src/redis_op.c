@@ -75,6 +75,90 @@ END:
 
 /* -------------------------------------------*/
 /**
+ * @brief  设置key的值为str
+ *
+ * @param conn       已经建立的链接
+ * @param key        需要创建或者修改的key
+ * @param str		 给key赋值str
+ *
+ * @returns   
+ *                -1 失败
+ *                0  成功
+ */
+/* -------------------------------------------*/
+int rop_set_key(redisContext *conn, char* key, char *str)
+{
+	int ret = 0;
+	
+	redisReply *reply = NULL;
+
+	reply = redisCommand(conn, "SET %s %s", key, str);
+	//rop_test_reply_type(reply);
+	
+	if (reply->type != REDIS_REPLY_STATUS) {
+		fprintf(stderr, "[-][GMS_REDIS]rop_set_key set %s %s error\n", key, str);
+		LOG(REDIS_LOG_MODULE, REDIS_LOG_PROC, "[-][GMS_REDIS]rop_set_key set %s %s error! %s\n",key, str, conn->errstr);
+		ret = -1;
+		goto END;
+	}
+	
+	if(strcmp(reply->str, "OK") != 0)
+	{
+		fprintf(stderr, "[-][GMS_REDIS]rop_set_key set %s %s fail\n", key, str);
+		LOG(REDIS_LOG_MODULE, REDIS_LOG_PROC, "[-][GMS_REDIS]rop_set_key set %s %s fail!\n",key, str);
+		ret = -2;
+		goto END;
+	}
+	//printf("rop_set_key set %s %s OK\n", key, str);
+	
+END:
+	freeReplyObject(reply);
+	return ret;
+}
+
+/* -------------------------------------------*/
+/**
+ * @brief 获取key的值到str中
+ *
+ * @param conn       已经建立的链接
+ * @param key        需要获取的key值
+ * @param str	 	 将key对应的value赋值给str
+ *
+ * @returns   
+ *                -1 失败
+ *                0  成功
+ */
+/* -------------------------------------------*/
+int rop_get_key(redisContext *conn, char* key, char *str)
+{
+	int ret = 0;
+	
+	redisReply *reply = NULL;
+	
+	reply = redisCommand(conn, "GET %s", key);
+	rop_test_reply_type(reply);
+	
+	if (reply->type != REDIS_REPLY_STRING) {
+		fprintf(stderr, "[-][GMS_REDIS]rop_get_key get %s error\n", key);
+		LOG(REDIS_LOG_MODULE, REDIS_LOG_PROC, "[-][GMS_REDIS]rop_get_key get %s error! %s\n",key, conn->errstr);
+		ret = -1;
+		goto END;
+	}
+	
+	else if(reply->type == REDIS_REPLY_NIL){
+		str[0] = '\0';
+	}
+	
+	strncpy(str, reply->str, reply->len);
+	str[reply->len] = '\0';
+	
+END:
+	freeReplyObject(reply);
+	return ret;
+}
+
+/* -------------------------------------------*/
+/**
  * @brief  判断key值是否存在
  *
  * @param conn		已经建立的链接

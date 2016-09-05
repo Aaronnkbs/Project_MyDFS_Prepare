@@ -124,6 +124,36 @@ int rop_flush_database(redisContext *conn);
 
 /* -------------------------------------------*/
 /**
+ * @brief  设置key的值为str
+ *
+ * @param conn       已经建立的链接
+ * @param key        需要创建或者修改的key
+ * @param str	 	 给key赋值str
+ *
+ * @returns   
+ *                -1 失败
+ *                0  成功
+ */
+/* -------------------------------------------*/
+int rop_set_key(redisContext *conn, char* key, char *str);
+
+/* -------------------------------------------*/
+/**
+ * @brief 获取key的值到str中
+ *
+ * @param conn       已经建立的链接
+ * @param key        需要获取的key值
+ * @param str	 	 将key对应的value赋值给str
+ *
+ * @returns   
+ *                -1 失败
+ *                0  成功
+ */
+/* -------------------------------------------*/
+int rop_get_key(redisContext *conn, char* key, char *str);
+
+/* -------------------------------------------*/
+/**
  * @brief  判断key值是否存在
  *
  * @param conn        已经建立的链接

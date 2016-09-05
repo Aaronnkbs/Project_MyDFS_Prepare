@@ -1,0 +1,44 @@
+===20160905-161643,rop_connectdb_nopwd[405]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-162200,rop_connectdb_nopwd[405]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-162200,rop_test_reply_type[350]=== [+][GMS_REDIS]=REDIS_REPLY_STATUS=[string] use reply->str to get data, reply->len get data len
+
+===20160905-162200,rop_disconnect[561]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-163629,rop_connectdb_nopwd[413]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-163629,rop_disconnect[569]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-163939,rop_connectdb_nopwd[412]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-163939,rop_disconnect[568]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-190203,rop_connectdb_nopwd[412]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-190203,rop_disconnect[568]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-193026,rop_connectdb_nopwd[439]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-193026,rop_test_reply_type[399]=== [+][GMS_REDIS]=REDIS_REPLY_string=[string] use reply->str to get data, reply->len get data len
+
+===20160905-193026,rop_disconnect[595]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-193350,rop_connectdb_nopwd[439]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-193350,rop_test_reply_type[399]=== [+][GMS_REDIS]=REDIS_REPLY_string=[string] use reply->str to get data, reply->len get data len
+
+===20160905-193350,rop_disconnect[595]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-193354,rop_connectdb_nopwd[448]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-193354,rop_test_reply_type[402]=== [+][GMS_REDIS]=REDIS_REPLY_NIL=[] data not exist
+
+===20160905-193354,rop_disconnect[604]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
+===20160905-194659,rop_connectdb_nopwd[453]=== [+][GMS_REDIS]Connect 127.0.0.1:6379 SUCCESS!
+
+===20160905-194659,rop_test_reply_type[413]=== [+][GMS_REDIS]=REDIS_REPLY_string=[string] use reply->str to get data, reply->len get data len
+
+===20160905-194659,rop_disconnect[609]=== [+][GMS_REDIS]Disconnect SUCCESS!
+
